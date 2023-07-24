@@ -40,7 +40,7 @@ RUN (curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | 
 RUN cd /home/gitlab-runner
 
 # Install R libraries from copied file to allow layer caching
-COPY awfy/report/bc-vs-ast/scripts/libraries.R
+COPY awfy/report/bc-vs-ast/scripts/libraries.R /home/gitlab-runner/
 RUN Rscript libraries.R && rm libraries.R
 
 RUN git clone -b exp https://github.com/smarr/ast-vs-bc-experiments.git
