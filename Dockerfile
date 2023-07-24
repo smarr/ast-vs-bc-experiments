@@ -37,7 +37,7 @@ RUN cp -r jdk-20.0.1+9 /usr/lib/jvm/temurin-20-jdk-amd64
 SHELL ["/bin/bash", "-c"]
 RUN (curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash) && . ~/.nvm/nvm.sh && nvm install v17.9.0
 
-RUN cd /home/gitlab-runner
+WORKDIR /home/gitlab-runner
 
 # Install R libraries from copied file to allow layer caching
 COPY awfy/report/bc-vs-ast/scripts/libraries.R /home/gitlab-runner/
