@@ -9,7 +9,7 @@ init_baselines() {
     export PATH=/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH
 
     pushd TruffleSOM 
-    git checkout 64ffec11a782d729ecfdf9c50c3b07f99e96349f  && git submodule update --init --recursive
+    git checkout 64ffec11a782d729ecfdf9c50c3b07f99e96349f && ant libs jvmci-libs
     popd
 
     git clone https://github.com/OctaveLarose/PySOM.git
