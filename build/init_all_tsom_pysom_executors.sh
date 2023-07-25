@@ -22,8 +22,9 @@ init_baselines() {
 init_tsom() {
     git -C TruffleSOM worktree add -b $1 ../TruffleSOM-$1 $2
     pushd TruffleSOM-$1
-    git submodule update -f --init --recursive
     rm -rf libs && ln -sf $3/TruffleSOM/libs
+    rm -rf core-lib && ln -sf $3/TruffleSOM/core-lib
+    rm -rf are-we-fast-yet && ln -sf $3/TruffleSOM/are-we-fast-yet
     popd
 }
 
