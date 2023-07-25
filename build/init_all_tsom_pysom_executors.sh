@@ -29,7 +29,7 @@ init_tsom() {
 }
 
 init_pysom() {
-    git -c PySOM worktree add -b $1 ../PySOM-$1 $2
+    git -C PySOM worktree add -b $1 ../PySOM-$1 $2
     pushd PySOM-$1
     git submodule update -f --init --recursive
     rm -rf pypy && ln -s $3/pypy2.7-v7.3.9-src pypy
