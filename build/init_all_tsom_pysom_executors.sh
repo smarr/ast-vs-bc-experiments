@@ -9,13 +9,12 @@ init_baselines() {
     export PATH=/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH
 
     pushd TruffleSOM 
-    git checkout 64ffec11a782d729ecfdf9c50c3b07f99e96349f  && git submodule update -f --init --recursive
-    ant compile
+    git checkout 64ffec11a782d729ecfdf9c50c3b07f99e96349f  && git submodule update --init --recursive
     popd
 
     git clone https://github.com/OctaveLarose/PySOM.git
     pushd PySOM
-    git checkout c98d42786fc5f769dbe9e508eb7af4b54a33a2c8  && git submodule update -f --init --recursive
+    git checkout c98d42786fc5f769dbe9e508eb7af4b54a33a2c8  && git submodule update --init --recursive
     ln -s $1/pypy2.7-v7.3.9-src pypy
     popd 
 }
