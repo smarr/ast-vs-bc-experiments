@@ -12,6 +12,10 @@ init_baselines() {
     git checkout 64ffec11a782d729ecfdf9c50c3b07f99e96349f && ant libs jvmci-libs
     pushd core-lib
     git fetch --all && git checkout -b fixed-unittest-benchmark 80158fbaab718188fd4836cc7f8fb087418213da
+    # generate benchmark files
+    pushd Examples/Benchmarks/TestSuite
+    ./duplicate-tests.sh
+    popd
     popd
     popd
 
